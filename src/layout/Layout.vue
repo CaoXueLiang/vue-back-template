@@ -28,6 +28,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/layoutconst.scss";
 .app-wrapper {
   position: relative;
   height: 100%;
@@ -37,7 +38,7 @@ export default {
 .sidebar-container {
   -webkit-transition: width 0.28s;
   transition: width 0.28s;
-  width: 210px !important;
+  width: $layoutSideBarWidth !important;
   background-color: #304156;
   height: 100%;
   position: fixed;
@@ -53,7 +54,7 @@ export default {
   min-height: 100%;
   -webkit-transition: margin-left 0.28s;
   transition: margin-left 0.28s;
-  margin-left: 210px;
+  margin-left: $layoutSideBarWidth;
   position: relative;
 }
 
@@ -62,13 +63,13 @@ export default {
   top: 0;
   right: 0;
   z-index: 9;
-  width: calc(100% - 210px);
+  width: calc(100% - #{$layoutSideBarWidth});
   -webkit-transition: width 0.28s;
   transition: width 0.28s;
 }
 
 .navbar {
-  height: 50px;
+  height: $layoutHeaderHeight;
   overflow: hidden;
   position: relative;
   background: #fff;
