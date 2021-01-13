@@ -1,16 +1,21 @@
 <template>
   <div class="app-main ">
     <transition name="fade-transform" mode="out-in">
-      <!-- <router-view :key="key" /> -->
       <div>
-        <!-- 我是主要的内容 -->
+        <router-view :key="key" />
       </div>
     </transition>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    key() {
+      return this.$route.fullPath;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

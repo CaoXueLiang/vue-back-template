@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import { isExternal } from "../../utils/validate.js";
 export default {
   name: "SidebarItem",
   props: {
@@ -32,6 +33,12 @@ export default {
   methods: {
     handleClickItem(path) {
       console.log("====path====" + path);
+      console.log("====path====" + this.$route.fullPath);
+      if (!isExternal(path)) {
+        this.$router.push(path);
+      } else {
+        window.open(path, "_blank");
+      }
     },
   },
 };
